@@ -11,14 +11,21 @@ Download from NPM:
 # TODO - publish to NPM
 ```
 
-Add to your Vue application:
+Add to your Vue instance:
 
 ```javascript
 import MWVueNotify from 'mw-vue-notify';
 app.use(MWVueNotify, {}); // Can provide config to change default behavior - see below.
 ```
 
+Add this tag to your top-level Vue component.
+```html
+<mw-vn-notification-display></mw-vn-notification-display>
+```
+
 # Usage
+
+To show a new notification:
 
 ```javascript
 import { useVueNotify } from 'mw-vue-notify';
@@ -29,6 +36,14 @@ mwVueNotify.showNotification({
     cssClasses: ['mw-vn-warning'],
     data: { message: "Task failed successfully!" },
 });
+```
+
+If you need a non-built-in way to delete a notification, `showNotification` returns an ID. Pass this ID into `deleteNotification` using your custom logic:
+
+```javascript
+let notificationId = mwVueNotify.showNotification(...);
+
+mwVueNotify.deleteNotification(notificationId)
 ```
 
 # Configuration
