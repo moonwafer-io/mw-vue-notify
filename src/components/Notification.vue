@@ -1,5 +1,6 @@
 <template>
     <div class="mw-vn-notification">
+        {{ mwVnNotification }}
     </div>
 </template>
 
@@ -9,6 +10,7 @@ import { defineComponent, computed } from "vue";
 
 export default defineComponent({
     props: {
+        mwVnNotification: Object, // InternalNotificationConfig
     },
     setup(props) {
         return {
@@ -19,6 +21,9 @@ export default defineComponent({
 
 <style scoped lang="scss">
 
-.mw-nv-notification {
+.mw-vn-notification {
+    border: 1px solid green;
+    color: black;
+    background: gray;
 }
 </style>
