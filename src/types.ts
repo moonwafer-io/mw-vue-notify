@@ -11,6 +11,9 @@ export interface NotificationConfig {
     dismissButton?: boolean;
     dismissAfterMillis?: number;
     cssClasses?: string[];
+    componentName?: string;
+
+    data?: any;
 };
 export interface InternalNotificationConfig extends NotificationConfig {
     id: string;

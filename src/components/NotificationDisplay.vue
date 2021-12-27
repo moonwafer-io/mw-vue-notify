@@ -1,9 +1,11 @@
 <template>
     <div class="mw-vn-notification-display">
-        <mw-vn-notification-group v-for="(group, i) in notificationGroups" v-bind:key="'mw-vn-group-' + i"
+        <mw-vn-notification-group
+            v-for="(group, i) in notificationGroups"
+            v-bind:key="'mw-vn-group-' + i"
             v-bind:class="['mw-vn-group-' + i]"
-            v-bind:mw-vn-group="group">
-        </mw-vn-notification-group>
+            v-bind:mw-vn-group="group"
+            ></mw-vn-notification-group>
     </div>
 </template>
 
@@ -31,14 +33,14 @@ export default defineComponent({
     position: fixed;
     z-index: 1000;
 
-    .mw-vn-group-0 { top: 0; left: 0; }
-    .mw-vn-group-1 { top: 0; left: 50%; }
-    .mw-vn-group-2 { top: 0; right: 0; }
-    .mw-vn-group-3 { top: 50%; left: 0; }
-    .mw-vn-group-4 { top: 50%; left: 50%; }
-    .mw-vn-group-5 { top: 50%; right: 0; }
-    .mw-vn-group-6 { bottom: 0; left: 0; }
-    .mw-vn-group-7 { bottom: 0; left: 50%; }
-    .mw-vn-group-8 { bottom: 0; right: 0; }
+    .mw-vn-group-0 { top: 0;    left: 0;                                     }
+    .mw-vn-group-1 { top: 0;    left: 50%; transform: translate(-50%, 0);    }
+    .mw-vn-group-2 { top: 0;    right: 0;                                    }
+    .mw-vn-group-3 { top: 50%;  left: 0;   transform: translate(0, -50%);    }
+    .mw-vn-group-4 { top: 50%;  left: 50%; transform: translate(-50%, -50%); }
+    .mw-vn-group-5 { top: 50%;  right: 0;  transform: translate(0, -50%);    }
+    .mw-vn-group-6 { bottom: 0; left: 0;                                     }
+    .mw-vn-group-7 { bottom: 0; left: 50%; transform: translate(-50%, 0);    }
+    .mw-vn-group-8 { bottom: 0; right: 0;                                    }
 }
 </style>

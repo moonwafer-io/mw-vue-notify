@@ -1,9 +1,10 @@
 
 
-import { App, reactive } from 'vue';
+import { App, reactive, Ref, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
 import { InternalNotificationConfig, NotificationConfig, VueNotifyConfig } from './types';
+import { positionToIndex } from './utilities';
 
 // Modal Components
 import NotificationDisplay from './components/NotificationDisplay.vue';
@@ -11,7 +12,7 @@ import NotificationGroup from './components/NotificationGroup.vue';
 import Notification from './components/Notification.vue';
 // Layout Components
 import Plaintext from './components/layouts/Plaintext.vue';
-import { positionToIndex } from './utilities';
+import MessageWithList from './components/layouts/MessageWithList.vue';
 
 let appRef: App | undefined = undefined;
 
@@ -27,6 +28,7 @@ export default {
             app.component('mw-vn-notification', Notification);
             // Layout Components
             app.component('mw-vn-plaintext', Plaintext);
+            app.component('mw-vn-message-with-list', MessageWithList);
         }
     }
 }
@@ -36,6 +38,8 @@ const DEFAULT_CONFIG: NotificationConfig = {
     dismissButton: true,
     dismissAfterMillis: 0,
     cssClasses: [],
+    componentName: 'mw-vn-plaintext',
+    data: {}
 };
 
 class VueNotify {
@@ -69,7 +73,18 @@ class VueNotify {
     showNotification(config: NotificationConfig): string {
         let resolvedConfig: InternalNotificationConfig = { id: uuidv4(), ...this.config.defaults, ...config };
         this.notifications[positionToIndex(resolvedConfig.position!)].push(resolvedConfig);
+
         return resolvedConfig.id;
+    }
+
+    deleteNotification(id: string): void {
+        let group = this.notifications.findIndex(group => group.some(notif => notif.id === id));
+        if (group !== -1) {
+            let index = this.notifications[group].findIndex(notif => notif.id === id);
+            if (index !== -1) {
+                this.notifications[group].splice(index, 1);
+            }
+        }
     }
 }
 

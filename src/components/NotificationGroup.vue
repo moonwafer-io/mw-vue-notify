@@ -1,8 +1,10 @@
 <template>
     <div class="mw-vn-notification-group">
-        <mw-vn-notification v-for="notification in mwVnGroup" v-bind:key="'notification-' + notification.id"
-            v-bind:mw-vn-notification="notification">
-        </mw-vn-notification>
+        <transition-group name="mw-vn-show-dismiss">
+            <div v-for="notification in mwVnGroup" v-bind:key="'notification-' + notification.id">
+                <mw-vn-notification v-bind:mw-vn-notification="notification"></mw-vn-notification>
+            </div>
+        </transition-group>
     </div>
 </template>
 
@@ -14,7 +16,7 @@ export default defineComponent({
     props: {
         mwVnGroup: Array, // InternalNotificationConfig[]
     },
-    setup() {
+    setup(props) {
         return {
         }
     },
@@ -24,6 +26,11 @@ export default defineComponent({
 <style scoped lang="scss">
 .mw-vn-notification-group {
     position: fixed;
-    border: 3px solid red;
+
+    .mw-vn-show-dismiss-enter-active,.mw-vn-show-dismiss-leave-active {
+        transition: all 0.5s ease;
+    }
+    .mw-vn-show-dismiss-enter-from { opacity: 0; transform: translateX(-100px); }
+    .mw-vn-show-dismiss-leave-to   { opacity: 0; transform: translateX(100px); }
 }
 </style>
