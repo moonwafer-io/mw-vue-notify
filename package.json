@@ -2,7 +2,7 @@
   "name": "mw-vue-notify",
   "version": "1.0.0",
   "description": "Notification library for Vue 3 apps",
-  "repository": "git@bitbucket.org:etchedincode/mw-vue-notify.git",
+  "repository": "git@github.com:moonwafer-io/mw-vue-notify.git",
   "main": "dist/index.js",
   "author": "Moonwafer LLC",
   "license": "MIT",
@@ -16,7 +16,6 @@
     "vue": "3.0.11"
   },
   "devDependencies": {
-    "@types/uuid": "^8.3.3",
     "@vue/compiler-sfc": "3.0.11",
     "css-loader": "^6.5.0",
     "node-sass": "^6.0.1",
@@ -31,7 +30,5 @@
     "webpack-cli": "^4.9.1",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {
-    "uuid": "^8.3.2"
-  }
+  "dependencies": {}
 }

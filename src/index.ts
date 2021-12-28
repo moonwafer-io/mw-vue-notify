@@ -1,7 +1,5 @@
 
-
-import { App, reactive, Ref, ref } from 'vue';
-import { v4 as uuidv4 } from 'uuid';
+import { App, reactive } from 'vue';
 
 import { InternalNotificationConfig, NotificationConfig, VueNotifyConfig } from './types';
 import { positionToIndex } from './utilities';
@@ -15,6 +13,7 @@ import Plaintext from './components/layouts/Plaintext.vue';
 import MessageWithList from './components/layouts/MessageWithList.vue';
 
 let appRef: App | undefined = undefined;
+let idCounter = 0;
 
 export default {
     install: (app: App, options: VueNotifyConfig): any => {
@@ -42,7 +41,7 @@ const DEFAULT_CONFIG: NotificationConfig = {
     data: {}
 };
 
-class VueNotify {
+export class VueNotify {
 
     private config: VueNotifyConfig;
 
@@ -71,7 +70,7 @@ class VueNotify {
     }
 
     showNotification(config: NotificationConfig): string {
-        let resolvedConfig: InternalNotificationConfig = { id: uuidv4(), ...this.config.defaults, ...config };
+        let resolvedConfig: InternalNotificationConfig = { id: 'notifId-' + (idCounter++), ...this.config.defaults, ...config };
         this.notifications[positionToIndex(resolvedConfig.position!)].push(resolvedConfig);
 
         return resolvedConfig.id;

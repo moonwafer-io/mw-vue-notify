@@ -56,12 +56,14 @@ Any subset of configuration options can be provided to either:
     // (default values shown)
     import MWVueNotify from 'mw-vue-notify';
     app.use(MWVueNotify, {
-        position: 'bottom-right',
-        dismissButton: true,
-        dismissAfterMillis: 0,
-        cssClasses: [],
-        componentName: 'mw-vn-plaintext',
-        data: {}, // Doesn't make sense to provide this option here, but listed for completeness.
+        defaults: {
+            position: 'bottom-right',
+            dismissButton: true,
+            dismissAfterMillis: 0,
+            cssClasses: [],
+            componentName: 'mw-vn-plaintext',
+            data: {}, // Doesn't make sense to provide this option here, but listed for completeness.
+        }
     });
     ```
 

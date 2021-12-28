@@ -48,15 +48,15 @@ export default defineComponent({
 
 <style scoped lang="scss">
 
-$light-red: rgb(255, 175, 175);
-$light-yellow: rgb(255, 255, 175);
-$light-green: rgb(100, 255, 175);
-$light-blue: rgb(175, 175, 255);
+$light-red: #F7A1A1;
+$light-yellow: #FFFF8F;
+$light-green: #A1F7A9;
+$light-blue: #A1B2F7;
 
-$dark-red: rgb(50, 25, 25);
-$dark-yellow: rgb(50, 50, 25);
-$dark-green: rgb(25, 50, 25);
-$dark-blue: rgb(25, 25, 50);
+$dark-red: #550000;
+$dark-yellow: #555500;
+$dark-green: #005500;
+$dark-blue: #000055;
 
 @mixin notification-coloring($background, $foreground) {
     color: $foreground;
