@@ -38,10 +38,12 @@ mwVueNotify.showNotification({
 });
 ```
 
-If you need a non-built-in way to delete a notification, `showNotification` returns an ID. Pass this ID into `deleteNotification` using your custom logic:
+If you need a non-built-in way to delete a notification (for example, dismissing notifications when the user navigates to a different page), `showNotification()` returns an ID. Pass this ID into `deleteNotification()` to delete the notification:
 
 ```javascript
 let notificationId = mwVueNotify.showNotification(...);
+
+// ...something gets triggered...
 
 mwVueNotify.deleteNotification(notificationId)
 ```
