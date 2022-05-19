@@ -23,7 +23,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
 .mw-vn-message-with-list {
     p  { margin: 0 0 10px 0; }
