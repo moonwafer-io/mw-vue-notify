@@ -18,7 +18,7 @@ import MWVueNotify from 'mw-vue-notify';
 app.use(MWVueNotify, {}); // Can provide config to change default behavior - see below.
 ```
 
-Add this tag to your top-level Vue component.
+Add this tag to your top-level Vue component. This is where all of your notification elements will be mounted into the DOM.
 ```html
 <mw-vn-notification-display></mw-vn-notification-display>
 ```
