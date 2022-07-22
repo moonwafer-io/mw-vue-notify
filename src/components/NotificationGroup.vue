@@ -56,7 +56,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .mw-vn-notification-group {
     position: fixed;
 

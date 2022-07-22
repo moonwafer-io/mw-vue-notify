@@ -46,25 +46,25 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
-
-$light-red: #F7A1A1;
-$light-yellow: #FFFF8F;
-$light-green: #A1F7A9;
-$light-blue: #A1B2F7;
-
-$dark-red: #550000;
-$dark-yellow: #555500;
-$dark-green: #005500;
-$dark-blue: #000055;
-
-@mixin notification-coloring($background, $foreground) {
-    color: $foreground;
-    border-color: $foreground;
-    background: $background;
-}
+<style lang="scss">
 
 .mw-vn-notification {
+    $light-red: #F7A1A1;
+    $light-yellow: #FFFF8F;
+    $light-green: #A1F7A9;
+    $light-blue: #A1B2F7;
+
+    $dark-red: #550000;
+    $dark-yellow: #555500;
+    $dark-green: #005500;
+    $dark-blue: #000055;
+
+    @mixin notification-coloring($background, $foreground) {
+        color: $foreground;
+        border-color: $foreground;
+        background: $background;
+    }
+
     position: relative;
 
     padding: 25px;

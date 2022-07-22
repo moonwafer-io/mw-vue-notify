@@ -20,7 +20,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
 .mw-vn-plaintext {
     p {
