@@ -8,7 +8,11 @@ This is a Vue 3 library for showing notifications to the user. There are a few b
 Download from NPM:
 
 ```bash
-# TODO - publish to NPM
+# Yarn
+yarn install mw-vue-notify
+
+# NPM
+npm install mw-vue-notify
 ```
 
 Add to your Vue instance:
