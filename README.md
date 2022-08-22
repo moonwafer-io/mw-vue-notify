@@ -9,7 +9,7 @@ Download from NPM:
 
 ```bash
 # Yarn
-yarn install mw-vue-notify
+yarn add mw-vue-notify
 
 # NPM
 npm install mw-vue-notify
