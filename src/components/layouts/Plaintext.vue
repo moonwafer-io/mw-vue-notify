@@ -1,6 +1,6 @@
 <template>
     <div class="mw-vn-plaintext">
-        <p v-for="(message, i) in messages" v-bind:key="'mw-vn-message-' + i">{{ message }}</p>
+        <p v-for="(message, i) in messages" v-bind:key="'mw-vn-message-' + String(i)">{{ message }}</p>
     </div>
 </template>
 

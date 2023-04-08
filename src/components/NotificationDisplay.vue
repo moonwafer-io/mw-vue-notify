@@ -2,8 +2,8 @@
     <div class="mw-vn-notification-display">
         <mw-vn-notification-group
             v-for="(group, i) in notificationGroups"
-            v-bind:key="'mw-vn-group-' + i"
-            v-bind:class="['mw-vn-group-' + i]"
+            v-bind:key="'mw-vn-group-' + String(i)"
+            v-bind:class="['mw-vn-group-' + String(i)]"
             v-bind:mw-vn-group="group"
             ></mw-vn-notification-group>
     </div>

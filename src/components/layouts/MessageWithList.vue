@@ -2,7 +2,7 @@
     <div class="mw-vn-message-with-list">
         <p v-if="message">{{ message }}</p>
         <ul>
-            <li v-for="(item, i) in items" v-bind:key="'item-' + i">{{ item }}</li>
+            <li v-for="(item, i) in items" v-bind:key="'item-' + String(i)">{{ item }}</li>
         </ul>
     </div>
 </template>
